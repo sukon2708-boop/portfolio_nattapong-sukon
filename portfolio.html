@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Portfolio — Nattapong Sukon</title>
+
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* =========================================================
+       PORTFOLIO PAGE
+    ========================================================= */
+
+    html,
+    body {
+      font-family: "Noto Sans Thai", "DM Sans", sans-serif;
+    }
+
+
+    /* =========================================================
+       PREMIUM TYPOGRAPHY
+    ========================================================= */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button,
+    .nav,
+    .logo-link,
+    .eyebrow,
+    .tabs,
+    .btn {
+      font-family: "DM Sans", "Noto Sans Thai", sans-serif;
+    }
+
+
+    p,
+    small,
+    footer p {
+      font-family: "Noto Sans Thai", sans-serif;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .nav ul {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .nav ul li {
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .nav ul li a {
+      font-family: "DM Sans", "Noto Sans Thai", sans-serif;
+    }
+
+
+    /* =========================================================
+       PORTFOLIO HEADER
+    ========================================================= */
+
+    .pf-head {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+
+    .pf-head h1 {
+      font-family: "DM Sans", "Noto Sans Thai", sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+
+    .eyebrow {
+      font-weight: 500;
+      letter-spacing: 0.12em;
+    }
+
+
+    /* =========================================================
+       TABS
+    ========================================================= */
+
+    .tabs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+
+    .tabs button {
+      font-family: "DM Sans", "Noto Sans Thai", sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+
+    .tabs button.active {
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       PORTFOLIO BODY
+    ========================================================= */
+
+    .pf-body {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+
+    .panel {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+
+    /* =========================================================
+       FULL WIDTH GRAPHIC / VISUAL
+    ========================================================= */
+
+    .brand.neutral {
+      display: block;
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+    }
+
+
+    .brand.neutral > div:first-child {
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+    }
+
+
+    .brand.neutral h2 {
+      font-family: "DM Sans", "Noto Sans Thai", sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+
+    .brand.neutral p {
+      font-family: "Noto Sans Thai", sans-serif;
+      font-weight: 400;
+      line-height: 1.9;
+      letter-spacing: -0.01em;
+    }
+
+
+    /* =========================================================
+       IMAGE GRID
+    ========================================================= */
+
+    .tiles {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+
+    /* =========================================================
+       VIDEO GRID
+    ========================================================= */
+
+    .media-grid {
+      display: grid;
+
+      /*
+        ใช้ 2 คอลัมน์บน Desktop
+      */
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      align-items: start;
+
+      gap: 24px;
+
+      width: 100%;
+      box-sizing: border-box;
+
+      margin-top: 28px;
+    }
+
+
+    /* =========================================================
+       VIDEO CARD
+    ========================================================= */
+
+    .video-card {
+      width: 100%;
+
+      overflow: hidden;
+
+      border-radius: 18px;
+
+      background: #000;
+
+      border: 1px solid rgba(255, 255, 255, .08);
+
+      box-shadow:
+        0 18px 45px rgba(0, 0, 0, .22);
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+
+    /* =========================================================
+       VIDEO
+       
+       สำคัญ:
+       ไม่กำหนด aspect-ratio
+       ไม่ใช้ object-fit: cover
+
+       เพื่อให้วิดีโอใช้สัดส่วนจริง
+       ========================================================= */
+
+    .video-card video {
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      max-width: 100%;
+
+      background: #000;
+
+      /*
+        สำคัญมาก
+        ให้ browser รักษาสัดส่วนต้นฉบับ
+      */
+      object-fit: contain;
+    }
+
+
+    /* =========================================================
+       VIDEO PORTRAIT
+       สำหรับวิดีโอแนวตั้ง
+    ========================================================= */
+
+    .video-card video[height] {
+      height: auto;
+    }
+
+
+    /* =========================================================
+       HIDDEN PANEL
+    ========================================================= */
+
+    .panel[hidden] {
+      display: none !important;
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 768px) {
+
+      .nav ul {
+        gap: 14px;
+      }
+
+
+      .tabs {
+        gap: 8px;
+      }
+
+
+      .tabs button {
+        font-size: 14px;
+      }
+
+
+      .brand.neutral p {
+        line-height: 1.8;
+      }
+
+
+      /* มือถือแสดงทีละวิดีโอ */
+
+      .media-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+
+      .video-card {
+        width: 100%;
+        border-radius: 15px;
+      }
+
+
+      .video-card video {
+        width: 100%;
+        height: auto;
+      }
+
+    }
+
+
+    /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 390px) {
+
+      .media-grid {
+        gap: 14px;
+      }
+
+
+      .video-card {
+        border-radius: 13px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     พื้นหลังแสงเคลื่อนไหว
+========================================================= -->
+
+<div class="aurora" aria-hidden="true">
+
+  <i></i>
+  <i></i>
+  <i></i>
+
+</div>
+
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="nav" aria-label="เมนูหลัก">
+
+
+  <!-- LOGO -->
+
+  <a
+    class="logo-link"
+    href="index.html"
+    aria-label="Nattapong"
+  >
+
+    <i>
+
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="#fff"
+        aria-hidden="true"
+      >
+
+        <circle
+          cx="12"
+          cy="8"
+          r="4.2"
+        />
+
+        <path
+          d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"
+        />
+
+      </svg>
+
+    </i>
+
+
+    <span>NATTAPONG</span>
+
+  </a>
+
+
+
+  <!-- MENU -->
+
+  <ul>
+
+    <li>
+      <a href="index.html#about">
+        About Me
+      </a>
+    </li>
+
+    <li>
+      <a href="index.html#experience">
+        Experience
+      </a>
+    </li>
+
+    <li>
+      <a href="index.html#project">
+        Portfolio
+      </a>
+    </li>
+
+    <li>
+      <a href="index.html#faq">
+        FAQ
+      </a>
+    </li>
+
+    <li>
+      <a href="index.html#contact">
+        Contact
+      </a>
+    </li>
+
+  </ul>
+
+
+</nav>
+
+
+
+<!-- =========================================================
+     PORTFOLIO HEADER
+========================================================= -->
+
+<header class="pf-head">
+
+
+  <p class="eyebrow">
+    Portfolio
+  </p>
+
+
+  <h1 id="pf-title">
+    Video Editor
+  </h1>
+
+
+  <!-- PORTFOLIO TABS -->
+
+  <div
+    class="tabs"
+    id="pf-tabs"
+    role="tablist"
+    aria-label="หมวดผลงาน"
+  >
+
+
+    <!-- VIDEO -->
+
+    <button
+      type="button"
+      role="tab"
+      aria-selected="true"
+      aria-controls="panel-video"
+      data-cat="video"
+    >
+      Video Editor
+    </button>
+
+
+    <!-- GRAPHIC -->
+
+    <button
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="panel-graphic"
+      data-cat="graphic"
+    >
+      Graphic Design
+    </button>
+
+
+    <!-- VISUAL -->
+
+    <button
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="panel-visual"
+      data-cat="visual"
+    >
+      Visual Art
+    </button>
+
+
+  </div>
+
+
+</header>
+
+
+
+<!-- =========================================================
+     PORTFOLIO BODY
+========================================================= -->
+
+<main class="pf-body">
+
+
+
+  <!-- =======================================================
+       VIDEO EDITOR
+  ======================================================== -->
+
+  <div
+    class="panel"
+    id="panel-video"
+  >
+
+
+    <section
+      class="brand neutral"
+      data-cat="video"
+    >
+
+
+      <div>
+
+
+        <h2>
+          VIDEO EDITOR
+        </h2>
+
+
+        <p>
+          ผลงานด้าน Video Editing ที่รวบรวมวิดี
+          ครอบคลุมการตัดต่อและการนำเสนอเนื้อหาผ่านรูปแบบวิดีโอ
+        </p>
+
+
+
+        <!-- VIDEO WORKS -->
+
+        <div class="media-grid">
+
+
+          <!-- VIDEO 01 -->
+
+         <div class="video-card portrait">
+  <video controls preload="metadata">
+    <source src="images/video/video-01.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+          <!-- VIDEO 02 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-02.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 03 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-03.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 04 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-04.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 05 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-05.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 06 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-06.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 07 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-07.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 08 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-08.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 09 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-09.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 10 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-10.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 11 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-11.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 12 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-12.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 13 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-13.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+
+          <!-- VIDEO 14 -->
+
+          <div class="video-card">
+
+            <video
+              controls
+              preload="metadata"
+              playsinline
+            >
+
+              <source
+                src="images/video/video-14.mp4"
+                type="video/mp4"
+              >
+
+              เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
+
+            </video>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+
+
+  <!-- =======================================================
+       GRAPHIC DESIGN
+  ======================================================== -->
+
+  <div
+    class="panel"
+    id="panel-graphic"
+    hidden
+  >
+
+
+    <section
+      class="brand neutral"
+      data-cat="graphic"
+    >
+
+
+      <div>
+
+
+        <h2>
+          GRAPHIC DESIGN
+        </h2>
+
+
+        <p>
+          ผลงานออกแบบกราฟิกสำหรับสื่อประชาสัมพันธ์
+          สื่อออนไลน์ โฆษณา และงานออกแบบในรูปแบบต่าง ๆ
+        </p>
+
+
+
+        <div class="tiles">
+
+
+          <div
+            class="tile ph"
+            data-img="images/graphic/graphic-01.jpg"
+            data-alt="Graphic Design 01"
+          ></div>
+
+
+          <div
+            class="tile ph"
+            data-img="images/graphic/graphic-02.jpg"
+            data-alt="Graphic Design 02"
+          ></div>
+
+
+          <div
+            class="tile ph tall"
+            data-img="images/graphic/graphic-03.jpg"
+            data-alt="Graphic Design 03"
+          ></div>
+
+
+          <div
+            class="tile ph"
+            data-img="images/graphic/graphic-04.jpg"
+            data-alt="Graphic Design 04"
+          ></div>
+
+
+          <div
+            class="tile ph"
+            data-img="images/graphic/graphic-05.jpg"
+            data-alt="Graphic Design 05"
+          ></div>
+
+
+          <div
+            class="tile ph tall"
+            data-img="images/graphic/graphic-06.jpg"
+            data-alt="Graphic Design 06"
+          ></div>
+
+
+          <div
+            class="tile ph"
+            data-img="images/graphic/graphic-07.jpg"
+            data-alt="Graphic Design 07"
+          ></div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+
+
+  <!-- =======================================================
+       VISUAL ART
+  ======================================================== -->
+
+  <div
+    class="panel"
+    id="panel-visual"
+    hidden
+  >
+
+
+    <section
+      class="brand neutral"
+      data-cat="visual"
+    >
+
+
+      <div>
+
+
+        <h2>
+          VISUAL ART
+        </h2>
+
+
+        <p>
+          ผลงาน Visual Art และงานศิลปะดิจิทัล
+          ที่เน้นการสร้างสรรค์องค์ประกอบ
+        </p>
+
+
+
+        <div class="tiles">
+
+
+          <div
+            class="tile ph"
+            data-img="images/visual-art/visual-01.jpg"
+            data-alt="Visual Art 01"
+          ></div>
+
+
+          <div
+            class="tile ph"
+            data-img="images/visual-art/visual-02.jpg"
+            data-alt="Visual Art 02"
+          ></div>
+
+
+          <div
+            class="tile ph tall"
+            data-img="images/visual-art/visual-03.jpg"
+            data-alt="Visual Art 03"
+          ></div>
+
+
+          <div
+            class="tile ph"
+            data-img="images/visual-art/visual-04.jpg"
+            data-alt="Visual Art 04"
+          ></div>
+
+
+          <div
+            class="tile ph"
+            data-img="images/visual-art/visual-05.jpg"
+            data-alt="Visual Art 05"
+          ></div>
+
+
+          <div
+            class="tile ph tall"
+            data-img="images/visual-art/visual-06.jpg"
+            data-alt="Visual Art 06"
+          ></div>
+
+
+          <div
+            class="tile ph"
+            data-img="images/visual-art/visual-07.jpg"
+            data-alt="Visual Art 07"
+          ></div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER / CONTACT
+========================================================= -->
+
+<footer id="contact">
+
+
+  <h2>
+    Let's create something together.
+  </h2>
+
+
+  <p>
+    สนใจร่วมงานหรืออยากพูดคุยเกี่ยวกับโปรเจกต์
+    สามารถติดต่อผมได้ทางช่องทางด้านล่าง
+  </p>
+
+
+  <a
+    class="btn primary"
+    href="mailto:nattapongsukon2708@gmail.com"
+  >
+    nattapongsukon2708@gmail.com
+  </a>
+
+
+  <small>
+
+    ©
+    <span id="year">
+      2026
+    </span>
+    Nattapong Sukon
+
+  </small>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="main.js"></script>
+
+
+</body>
+</html>
